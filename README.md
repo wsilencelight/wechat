@@ -31,5 +31,14 @@
  auto随屏幕旋转，landscape横屏显示
   "pageOrientation": "portrait"
 ```
+- permission小程序接口权限相关设置
+```
+想要用map功能必须声明如下字段
+"permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+```
 # sitemap.json
 - 这个文件是配置小程序的内容是否允许被微信爬虫爬到的

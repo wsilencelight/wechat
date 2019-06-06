@@ -1,2 +1,5 @@
 <!--pages/classic/classic.wxml-->
-<text>pages/classic/classic.wxml</text>
+<navigator url="../map/map"> 出来吧地图！！！！！！ </navigator> 
+<view class="chunck"></view>
+<view class="chunck"></view>
+<view class="chunck"></view>
