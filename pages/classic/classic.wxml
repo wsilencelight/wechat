@@ -1,5 +1,14 @@
 <!--pages/classic/classic.wxml-->
-<navigator url="../map/map"> 出来吧地图！！！！！！ </navigator> 
-<view class="chunck"></view>
-<view class="chunck"></view>
-<view class="chunck"></view>
+<!-- <view class="main-content">
+  <view class="chunck color1">
+    <navigator url="../map/map"> 出来吧地图！！！！！！ </navigator> 
+  </view>
+  <view class="chunck color2">
+    <like-cmp/>
+  </view>
+  <view class="chunck color3">3</view>
+</view> -->
+<view>
+  <like-cmp />
+</view>
+

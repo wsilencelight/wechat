@@ -1,0 +1,5 @@
+<!--components/like/index.wxml-->
+<view bind:tap="handleLikeClick" class="content">
+  <image src="images/like.png"></image>
+  <text>{{sum}}</text>
+</view>

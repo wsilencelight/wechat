@@ -1,5 +1,27 @@
 /* pages/classic/classic.wxss */
+.main-content {
+  display: flex;
+  height: 500px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* 主轴 */
+  justify-content: space-around;
+  /* 辅轴 */
+  align-items: center;
+  background-color: #cccccc;
+}
 .chunck {
-  width: 100px;
+  /* display: inline-block; */
+  /* flex:1; */
+  width: 200px;
   height: 100px;
+}
+.color1 {
+  background-color: red;
+}
+.color2 {
+  background-color: yellow;
+}
+.color3 {
+  background-color: blue;
 }

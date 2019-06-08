@@ -42,3 +42,25 @@
 ```
 # sitemap.json
 - 这个文件是配置小程序的内容是否允许被微信爬虫爬到的
+# 如何使用组件
+- 需要在page/(comopent也可以)的.json文件中引用usingComponents
+```
+ 以键值对的形式，key是组件名，可以随意命名，value是组件路径
+ "usingComponents": {
+    "like-cmp": "components/like/index"
+  }
+```
+# 小程序特有rpx
+- 750rpx = 屏幕宽，所以rpx值应该是多少要根据psd原稿设计是基于多宽的
+# 小程序标签之page
+- 调试工具查看页面结构会发现最外层的标签就是page,就像html标签
+可以利用这个来设置一些全局样式
+# 组件能从全局继承哪些样式？（组件能继承的非常少）
+- font和color
+# page能继承绝大部分样式(page之所以是page是因为在app.json文件中声明了)
+# 设计页面时尽量不要留一些无意义的空白
+- 比如文字默认会有留白，可设置行高和字体一样来消除
+# 事件的监听
+- 可以用bind:eventName的形式来监听(但是原生组件只能用bindeventName的形式
+- 也可以用catch:eventName,区别就在于bind不会阻止冒泡，catch会阻止冒泡
+- [原生组件包括]()

@@ -1,0 +1,18 @@
+/* components/like/index.wxss */
+.content {
+  display: inline-flex;
+  flex-direction: row;
+  padding: 10rpx;
+}
+.content > image {
+  width: 32rpx;
+  height: 28rpx;
+}
+.content > text {
+  position: relative;
+  bottom: 10rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #bbbbbb;
+  font-family: "FangSong";
+}
