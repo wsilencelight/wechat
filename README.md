@@ -42,7 +42,9 @@
 ```
 # sitemap.json
 - 这个文件是配置小程序的内容是否允许被微信爬虫爬到的
-# 如何使用组件
+
+# 如何使用组件/声明组件
+- "component": true来声明组件
 - 需要在page/(comopent也可以)的.json文件中引用usingComponents
 ```
  以键值对的形式，key是组件名，可以随意命名，value是组件路径
@@ -52,15 +54,31 @@
 ```
 # 小程序特有rpx
 - 750rpx = 屏幕宽，所以rpx值应该是多少要根据psd原稿设计是基于多宽的
+
 # 小程序标签之page
 - 调试工具查看页面结构会发现最外层的标签就是page,就像html标签
 可以利用这个来设置一些全局样式
+
 # 组件能从全局继承哪些样式？（组件能继承的非常少）
 - font和color
+
 # page能继承绝大部分样式(page之所以是page是因为在app.json文件中声明了)
+
 # 设计页面时尽量不要留一些无意义的空白
 - 比如文字默认会有留白，可设置行高和字体一样来消除
+
 # 事件的监听
 - 可以用bind:eventName的形式来监听(但是原生组件只能用bindeventName的形式
 - 也可以用catch:eventName,区别就在于bind不会阻止冒泡，catch会阻止冒泡
-- [原生组件包括]()
+- [原生组件包括](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
+
+# properties(可以在组件外面修改其值)
+- 其数据的定义可以有type(必须有),value和observer(数据变化时执行，新版本推荐直接使用和properties同级的observers,性能更好)
+
+# wx.request来请求数据
+- [详见](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)
+- url想要能正场访问要在小程序后台设置合法域名，当然在开发环境下也可以在设置中关闭域名校验
+
+# 箭头函数是可以解决this的指代问题
+- 箭头函数不只是语法简洁，其本身没有this作用域的特点也使其解决了默写情况下的
+this指代问题，比如wx.request中回调函数想用外面的this,声明称箭头函数即可
