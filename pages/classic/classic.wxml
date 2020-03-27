@@ -9,6 +9,5 @@
   <view class="chunck color3">3</view>
 </view> -->
 <view>
-  <like-cmp />
+  <w-like />
 </view>
-

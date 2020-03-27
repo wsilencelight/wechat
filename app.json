@@ -8,9 +8,9 @@
     "navigationBarTitleText": "bmusic",
     "navigationBarTextStyle": "black",
     "navigationStyle": "default",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#cccccc",
     "backgroundTextStyle": "dark",
-    "enablePullDownRefresh": false,
+    "enablePullDownRefresh": true,
     "pageOrientation": "portrait"
   },
   "permission": {

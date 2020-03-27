@@ -6,7 +6,7 @@ Component({
   properties: {
     num: {
       type: Number,
-      value: 20
+      value: 1234
     },
     like: {
       type: Boolean,
