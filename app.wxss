@@ -1,4 +1,4 @@
 page {
-  color: #bbbbbb;
+  /* color: #bbbbbb; */
   font-family: "FangSong";
 }

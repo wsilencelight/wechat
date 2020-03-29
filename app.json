@@ -4,7 +4,7 @@
     "pages/map/map"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#cccccc",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "bmusic",
     "navigationBarTextStyle": "black",
     "navigationStyle": "default",

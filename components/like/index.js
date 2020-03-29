@@ -1,4 +1,6 @@
 // components/like/index.js
+import {ClassicModel} from '../../models/classic.js'
+let classicModel = new ClassicModel()
 Component({
   /**
    * 组件的属性列表
@@ -6,11 +8,19 @@ Component({
   properties: {
     num: {
       type: Number,
-      value: 1234
+      value: 0
     },
     like: {
       type: Boolean,
       value: false
+    },
+    art_id: {
+      type: Number,
+      value: null
+    },
+    type: {
+      type: Number,
+      value: null
     }
   },
 
@@ -28,10 +38,26 @@ Component({
   methods: {
     // 点击切换点赞图片和加减点赞数
     handleLikeClick (e) {
-      this.setData({
-        num: this.properties.like ? --this.properties.num : ++this.properties.num,
-        like: !this.properties.like
-      })
+      const params = {
+        art_id: this.properties.art_id,
+        type: this.properties.type
+      }
+      if (this.properties.like) {
+        classicModel.likeCancel(params, (res) => {
+          this.setData({
+            num: --this.properties.num,
+            like: false
+          })
+        })
+      } else {
+        classicModel.likeAdd(params, (res) => {
+          this.setData({
+            num: ++this.properties.num,
+            like: true
+          })
+        })
+      }
+     
     }
   }
 })

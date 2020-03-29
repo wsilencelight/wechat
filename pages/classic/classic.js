@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    latestData: {}
   },
 
   /**
@@ -14,7 +14,9 @@ Page({
    */
   onLoad: function(options) {
     classic.getLatest((res) => {
-      console.log(res)
+      this.setData({
+        latestData: res.data
+      })
     })
   },
 
@@ -50,7 +52,11 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    classic.getLatest((res) => {
+      this.setData({
+        latestData: res.data
+      })
+    })
   },
 
   /**

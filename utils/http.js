@@ -19,7 +19,8 @@ class HTTP {
           params.success(res)
         } else {
           wx.showToast({
-            title: res.data.msg,
+            // title: res.data ? res.data.msg : '请求异常，请稍后再试',
+            title: '请求异常，请稍后再试',
             icon: 'none',
             duration: 3000
           })
