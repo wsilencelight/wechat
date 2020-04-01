@@ -8,14 +8,24 @@
   </view>
   <view class="chunck color3">3</view>
 </view> -->
-<view class="header">
-  <w-epsoide class="episode" index="{{latestData.index}}"></w-epsoide>
-  <w-like
-    class="like"
-    num="{{latestData.fav_nums}}"
-    like="{{latestData.like_status}}"
-    art_id="{{latestData.id}}"
-    type="{{latestData.type}}"
-  />
+<view class="container">
+  <view class="header">
+    <w-epsoide class="episode" index="{{latestData.index}}"></w-epsoide>
+    <w-like
+      class="like"
+      num="{{latestData.fav_nums}}"
+      like="{{latestData.like_status}}"
+      art_id="{{latestData.id}}"
+      type="{{latestData.type}}"
+    />
+  </view>
+  <w-movie image="{{latestData.image}}" content="{{latestData.content}}"></w-movie>
+  <w-navi
+    class="navi"
+    title="{{latestData.title}}"
+    latest="{{latest}}"
+    first="{{first}}"
+    bind:left="onLeftClick"
+    bind:right="onRightClick"
+  ></w-navi>
 </view>
-<w-movie image="{{latestData.image}}" content="{{latestData.content}}"></w-movie>

@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
 .header {
     width: 100%;
     display: flex;
@@ -12,6 +19,11 @@
 .episode {
     margin-left: 20rpx;
     margin-top: 4rpx;
+}
+
+.navi {
+    position: absolute;
+    bottom: 40rpx;
 }
 
 .like {

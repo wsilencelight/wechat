@@ -1,18 +1,19 @@
-// components/classic/movie/index.js
-import {classicBehavior} from '../classic-beh'
+// components/classic/music/index.js
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [classicBehavior],
   properties: {
+    imgSrc: String,
+    title: String
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    pauseSrc: 'images/player@pause.png',
+    playSrc: 'images/player@play.png'
   },
 
   /**

@@ -6,16 +6,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    latestData: {}
+    latestData: {},
+    latest: true,
+    first: false
   },
 
+  // 加载当前期刊
+  getCurrent (nextOrPrevious) {
+    const index = this.data.latestData.index
+    classic.getCurrent(index, nextOrPrevious, (res) => {
+      this.setData({
+        latestData: res,
+        latest: classic.isLatest(res.index),
+        first: classic.isFirst(res.index)
+      })
+    })
+  },
+  // 查看新的一期
+  onLeftClick (e) {
+    this.getCurrent('/next')
+  },
+  //  查看旧的一期
+  onRightClick (e) {
+    this.getCurrent('/previous')
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     classic.getLatest((res) => {
       this.setData({
-        latestData: res.data
+        latestData: res
       })
     })
   },
@@ -54,7 +75,7 @@ Page({
   onPullDownRefresh: function() {
     classic.getLatest((res) => {
       this.setData({
-        latestData: res.data
+        latestData: res
       })
     })
   },
