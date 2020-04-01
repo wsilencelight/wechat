@@ -1,4 +1,4 @@
-/* components/epsoide/epsoide.wxss */
+/* components/episode/episode.wxss */
 .container {
   height: 60rpx;
   display: inline-flex;

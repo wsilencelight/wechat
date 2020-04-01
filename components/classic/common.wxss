@@ -1,8 +1,7 @@
-/* components/classic/movie/index.wxss */
-@import '../common.wxss';
-/* .classic-container {
+.classic-container {
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
 }
 
@@ -17,7 +16,7 @@
   position: relative;
   right: 310rpx;
   bottom: 58rpx;
-} */
+}
 
 .content {
   font-size: 36rpx;

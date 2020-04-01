@@ -8,13 +8,17 @@ Page({
   data: {
     latestData: {},
     latest: true,
-    first: false
+    first: false,
+    likeCount: 0,
+    likeStatus: false,
+    type: 0 // 0代表movie组件，1代表music组件，2代表eassy组件
   },
 
   // 加载当前期刊
   getCurrent (nextOrPrevious) {
     const index = this.data.latestData.index
     classic.getCurrent(index, nextOrPrevious, (res) => {
+      this.updateLikeStatus(res.id, res.type)
       this.setData({
         latestData: res,
         latest: classic.isLatest(res.index),
@@ -26,17 +30,31 @@ Page({
   onLeftClick (e) {
     this.getCurrent('/next')
   },
+
   //  查看旧的一期
   onRightClick (e) {
     this.getCurrent('/previous')
   },
+
+  // 更新like状态
+  updateLikeStatus(artID, category) {
+    classic.getClassicLikeStatus(artID, category, (res) => {
+      this.setData({
+        likeCount: res.fav_nums,
+        likeStatus: res.like_status
+      })
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     classic.getLatest((res) => {
       this.setData({
-        latestData: res
+        latestData: res,
+        likeCount: res.fav_nums,
+        likeStatus: res.like_status
       })
     })
   },
@@ -74,6 +92,7 @@ Page({
    */
   onPullDownRefresh: function() {
     classic.getLatest((res) => {
+      this.updateLikeStatus(res.id, res.type)
       this.setData({
         latestData: res
       })

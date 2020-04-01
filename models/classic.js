@@ -84,10 +84,12 @@ class ClassicModel extends HTTP {
   }
 
   // 因为缓存带来的点赞问题，所以点赞单独获取
-  getClassicLikeStatus(artID, category, sCallback) {
+  getClassicLikeStatus(artID, category, callback) {
     this.request({
       url: 'classic/' + category + '/' + artID + '/favor',
-      success: sCallback
+      success: (res) => {
+        callback(res.data)
+      }
     })
   }
 }

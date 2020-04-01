@@ -10,16 +10,23 @@
 </view> -->
 <view class="container">
   <view class="header">
-    <w-epsoide class="episode" index="{{latestData.index}}"></w-epsoide>
+    <w-episode class="episode" index="{{latestData.index}}"></w-episode>
     <w-like
       class="like"
-      num="{{latestData.fav_nums}}"
-      like="{{latestData.like_status}}"
+      num="{{likeCount}}"
+      like="{{likeStatus}}"
       art_id="{{latestData.id}}"
       type="{{latestData.type}}"
     />
   </view>
-  <w-movie image="{{latestData.image}}" content="{{latestData.content}}"></w-movie>
+  <w-movie wx:if="{{latestData.type === 100}}" image="{{latestData.image}}" content="{{latestData.content}}"></w-movie>
+  <w-music wx:if="{{latestData.type === 200}}"
+    image="{{latestData.image}}"
+    content="{{latestData.content}}"
+    musicSrc="{{latestData.url}}"
+    title="{{latestData.title}}"
+  ></w-music>
+  <w-eassy wx:if="{{latestData.type === 300}}" image="{{latestData.image}}" content="{{latestData.content}}"></w-eassy>
   <w-navi
     class="navi"
     title="{{latestData.title}}"
