@@ -5,11 +5,11 @@
   padding: 10rpx;
   width: 90rpx;
 }
-.content > image {
+.content image {
   width: 32rpx;
   height: 28rpx;
 }
-.content > text {
+.content text {
   position: relative;
   bottom: 10rpx;
   font-size: 24rpx;

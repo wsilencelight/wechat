@@ -43,21 +43,20 @@ Component({
         type: this.properties.type
       }
       if (this.properties.like) {
-        classicModel.likeCancel(params, (res) => {
+        classicModel.likeCancel(params).then(res => {
           this.setData({
             num: --this.properties.num,
             like: false
           })
         })
       } else {
-        classicModel.likeAdd(params, (res) => {
+        classicModel.likeAdd(params).then(res => {
           this.setData({
             num: ++this.properties.num,
             like: true
           })
         })
-      }
-     
+      } 
     }
   }
 })

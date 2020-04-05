@@ -32,6 +32,7 @@ Component({
       if (!status) {
         bgm.src = this.properties.musicSrc
         bgm.title = this.properties.title
+        bgm.coverImgUrl = this.properties.image
       } else {
         bgm.pause()
       }

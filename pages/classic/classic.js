@@ -13,11 +13,29 @@ Page({
     likeStatus: false,
     type: 0 // 0代表movie组件，1代表music组件，2代表eassy组件
   },
+  // 加载首页最新期刊
+  getLatest () {
+    classic.getLatest().then(res => {
+      this.setData({
+        latestData: res,
+        likeCount: res.fav_nums,
+        likeStatus: res.like_status
+      })
+    })
+  },
 
   // 加载当前期刊
   getCurrent (nextOrPrevious) {
     const index = this.data.latestData.index
-    classic.getCurrent(index, nextOrPrevious, (res) => {
+    // classic.getCurrent(index, nextOrPrevious, (res) => {
+    //   this.updateLikeStatus(res.id, res.type)
+    //   this.setData({
+    //     latestData: res,
+    //     latest: classic.isLatest(res.index),
+    //     first: classic.isFirst(res.index)
+    //   })
+    // })
+    classic.getCurrent(index, nextOrPrevious).then(res => {
       this.updateLikeStatus(res.id, res.type)
       this.setData({
         latestData: res,
@@ -38,10 +56,10 @@ Page({
 
   // 更新like状态
   updateLikeStatus(artID, category) {
-    classic.getClassicLikeStatus(artID, category, (res) => {
+    classic.getClassicLikeStatus(artID, category).then(res => {
       this.setData({
-        likeCount: res.fav_nums,
-        likeStatus: res.like_status
+        likeCount: res.data.fav_nums,
+        likeStatus: res.data.like_status
       })
     })
   },
@@ -50,13 +68,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    classic.getLatest((res) => {
-      this.setData({
-        latestData: res,
-        likeCount: res.fav_nums,
-        likeStatus: res.like_status
-      })
-    })
+    this.getLatest()
   },
 
   /**
