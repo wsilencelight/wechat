@@ -9,13 +9,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hotList: []
+    books: []
   },
 
   // 获取热门书籍
   getHotList () {
     bookModel.getHotList().then(res => {
-      console.log(res.data)
+      this.setData({
+        books: res.data
+      })
     })
   },
 
