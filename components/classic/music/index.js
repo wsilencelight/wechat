@@ -40,19 +40,15 @@ Component({
     // 监听自带音乐播放器的事件
     _monitorPlayer () {
       bgm.onPlay(() => {
-        console.log('aaa')
         this._recoverStatus()
       })
       bgm.onPause(() => {
-        console.log('bbb')
         this._recoverStatus()
       })
       bgm.onStop(() => {
-        console.log('ccc')
         this._recoverStatus()
       })
       bgm.onEnded(() => {
-        console.log('eee')
         this._recoverStatus()
       })
     },

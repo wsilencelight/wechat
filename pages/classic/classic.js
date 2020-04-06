@@ -27,14 +27,6 @@ Page({
   // 加载当前期刊
   getCurrent (nextOrPrevious) {
     const index = this.data.latestData.index
-    // classic.getCurrent(index, nextOrPrevious, (res) => {
-    //   this.updateLikeStatus(res.id, res.type)
-    //   this.setData({
-    //     latestData: res,
-    //     latest: classic.isLatest(res.index),
-    //     first: classic.isFirst(res.index)
-    //   })
-    // })
     classic.getCurrent(index, nextOrPrevious).then(res => {
       this.updateLikeStatus(res.id, res.type)
       this.setData({
@@ -103,12 +95,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    classic.getLatest((res) => {
-      this.updateLikeStatus(res.id, res.type)
-      this.setData({
-        latestData: res
-      })
-    })
+    this.getLatest()
+    console.log('sss')
   },
 
   /**

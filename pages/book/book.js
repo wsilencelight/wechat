@@ -1,18 +1,36 @@
 // pages/book/book.js
+import {
+  BookModel
+} from '../../models/book'
+const bookModel = new BookModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    hotList: []
   },
 
+  // 获取热门书籍
+  getHotList () {
+    bookModel.getHotList().then(res => {
+      console.log(res.data)
+    })
+  },
+
+  // 获取喜欢书籍数量
+  getMyBookCount () {
+    bookModel.getMyBookCount().then(res => {
+      console.log(res.data)
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getHotList()
+    // this.getMyBookCount()
   },
 
   /**
