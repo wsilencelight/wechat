@@ -1,4 +1,4 @@
-// pages/book/book.js
+// pages/book-detail/book-detail.js
 import {
   BookModel
 } from '../../models/book'
@@ -9,33 +9,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books: []
+    book: null,
+    comments: [],
+    likeStatus: false,
+    likeCount: 0
   },
 
-  // 获取热门书籍
-  getHotList () {
-    bookModel.getHotList().then(res => {
-      this.setData({
-        books: res.data
-      })
-    })
-  },
-
-  // 获取喜欢书籍数量
-  getMyBookCount () {
-    bookModel.getMyBookCount().then(res => {
-      console.log(res.data)
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHotList()
-    // debugger
-    var appInstance = getApp()
-    console.log(appInstance)
-    // this.getMyBookCount()
+    const bid = options.bid
+    const detail = bookModel.getDetail(bid)
+    const comments = bookModel.getComments(bid)
+    const likeStatus = bookModel.getLikeStatus(bid)
+    Promise.all([detail, comments, likeStatus]).then(res => {
+      // console.log(res)
+      this.setData({
+        book: res[0].data,
+        comments: res[1].data.comments,
+        likeStatus: res[2].data.likeStatus,
+        likeCount: res[2].data.fav_nums
+      })
+    })
   },
 
   /**

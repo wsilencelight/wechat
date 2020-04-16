@@ -1,0 +1,12 @@
+/* pages/view/view.wxss */
+.area {
+  height: 300rpx;
+  width: 100%;
+  background-color: antiquewhite;
+}
+
+.view {
+  height: 100rpx;
+  width: 100rpx;
+  background-color: blue;
+}

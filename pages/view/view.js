@@ -1,41 +1,30 @@
-// pages/book/book.js
-import {
-  BookModel
-} from '../../models/book'
-const bookModel = new BookModel()
+// pages/view/view.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books: []
-  },
 
-  // 获取热门书籍
-  getHotList () {
-    bookModel.getHotList().then(res => {
-      this.setData({
-        books: res.data
-      })
-    })
   },
-
-  // 获取喜欢书籍数量
-  getMyBookCount () {
-    bookModel.getMyBookCount().then(res => {
-      console.log(res.data)
-    })
+  // 拖动过程触发事件
+  bindchange (e) {
+    console.log('bindchange')
+  },
+  bindscale (e) {
+    console.log('bindscale')
+  },
+  htouchmove (e) {
+    console.log('htouchmove')
+  },
+  vtouchmove (e) {
+    console.log('vtouchmove')
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHotList()
-    // debugger
-    var appInstance = getApp()
-    console.log(appInstance)
-    // this.getMyBookCount()
+
   },
 
   /**

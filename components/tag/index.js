@@ -1,10 +1,15 @@
-// components/book/index.js
+// components/tag/index.js
 Component({
   /**
    * 组件的属性列表
    */
+  options: {
+    multipleSlots: true
+  },
+  externalClasses: ['ex-tag1','ex-tag2'],
   properties: {
-    book: Object
+    text: String,
+    num: Number
   },
 
   /**
@@ -18,11 +23,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleBookClick () {
-      wx.navigateTo({
-        url: `/pages/book-detail/book-detail?bid=${this.properties.book.id}`
-      })
-    }
 
   }
 })

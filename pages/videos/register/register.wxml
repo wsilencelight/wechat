@@ -1,0 +1,38 @@
+<!--pages/videos/register/register.wxml-->
+<view>
+  <!-- <canvas type="webgl" id="myCanvas"></canvas> -->
+  <!-- <web-view src="https://threejs.org/examples/css3d_sprites.html" /> -->
+  <view class="body">
+      <view class="photo-wrap">  <!-- 舞台 -->
+        <view class="container">   <!-- 容器 -->
+            <view class="img text">
+              Login
+            </view>
+            <view class="img img01">
+              <image src="../../../images/register/1.jpeg"></image>
+            </view>
+            <view class="img img02">
+              <image src="../../../images/register/2.jpeg"></image>
+            </view>
+            <view class="img img03">
+              <image src="../../../images/register/3.jpeg"></image>
+            </view>
+            <view class="img img04">
+              <image src="../../../images/register/4.jpeg"></image>
+            </view>
+            <view class="img img05">
+              <image src="../../../images/register/5.jpg"></image>
+            </view>
+            <!-- <view class="img img06">6</view>
+            <view class="img img07">7</view>
+            <view class="img img08">8</view>
+            <view class="img img09">9</view> -->
+        </view>
+    </view>
+  </view>
+
+  <button class="button-none" plain="true" size="mini" open-type="getUserInfo" bindgetuserinfo="getuserinfo">
+    <image src="../../../images/register/微信.png" />
+  </button>
+</view>
+

@@ -77,8 +77,10 @@
 
 # wx.request来请求数据
 - [详见](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)
-- url想要能正场访问要在小程序后台设置合法域名，当然在开发环境下也可以在设置中关闭域名校验
+- url想要能正常访问要在小程序后台设置合法域名，当然在开发环境下也可以在设置中关闭域名校验
 
 # 箭头函数是可以解决this的指代问题
 - 箭头函数不只是语法简洁，其本身没有this作用域的特点也使其解决了默写情况下的
 this指代问题，比如wx.request中回调函数想用外面的this,声明称箭头函数即可
+
+# 24db7abf93112e742d6812f112f409de

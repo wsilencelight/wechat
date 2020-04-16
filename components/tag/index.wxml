@@ -1,0 +1,5 @@
+<!--components/tag/index.wxml-->
+<view class="container ex-tag1">
+  <text>{{text}}</text>
+  <slot name="num"></slot>
+</view>

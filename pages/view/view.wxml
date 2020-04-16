@@ -1,0 +1,15 @@
+<!--pages/view/view.wxml-->
+
+<movable-area class="area">
+  <movable-view
+    class="view"
+    direction="all"
+    inertia="true"
+    scale="true"
+    bindchange="bindchange"
+    bindscale="bindscale"
+    htouchmove="htouchmove"
+    vtouchmove="vtouchmove"
+  >
+  </movable-view>
+</movable-area>

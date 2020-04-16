@@ -1,48 +1,51 @@
-// pages/book/book.js
 import {
-  BookModel
-} from '../../models/book'
-const bookModel = new BookModel()
+  RAL
+} from "../../../models/register&login" 
+const ral = new RAL()
+// pages/videos/register/register.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books: []
-  },
 
-  // 获取热门书籍
-  getHotList () {
-    bookModel.getHotList().then(res => {
-      this.setData({
-        books: res.data
+  },
+  // 获取微信用户code
+  getCode () {
+    const promise = new Promise(resolve => {
+      wx.login({
+        success: (res) => {
+          resolve(res)
+        }
       })
     })
+    return promise
   },
-
-  // 获取喜欢书籍数量
-  getMyBookCount () {
-    bookModel.getMyBookCount().then(res => {
-      console.log(res.data)
+  // 请求用户信息并登陆
+  getuserinfo(res) {
+    const userinfo = res.detail.userInfo
+    this.getCode().then(res => {
+      return new Promise(resolve => {
+        resolve(res.code)
+      })
+    }).then(res => {
+      return ral.loginByWechat(res, userinfo.avatarUrl, userinfo.nickName)
+    }).then(res => {
+      console.log(res)
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHotList()
-    // debugger
-    var appInstance = getApp()
-    console.log(appInstance)
-    // this.getMyBookCount()
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
