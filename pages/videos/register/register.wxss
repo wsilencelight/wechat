@@ -1,4 +1,5 @@
 /* pages/videos/register/register.wxss */
+/* 微信按钮------------------------ */
 .button-none {
   border: none !important;
 }
@@ -6,7 +7,7 @@
   width: 50rpx;
   height: 50rpx;
 }
-/* 实现照片墙 */
+/* 实现照片墙 ----------------------*/
 @keyframes rotate-frame {
   0% {
       transform: rotateX(-20deg) rotateY(0deg);
@@ -108,4 +109,57 @@
 }
 .img09 {
     transform: rotateY(320deg) translateZ(280rpx);
+}
+
+/*表单内容-------------------------------------*/
+.inputView {
+  background-color: white;
+  line-height: 45px;
+}
+
+/*输入框*/
+.nameImage, .keyImage {
+  margin-left: 22px;
+  width: 20px;
+  height: 20px;
+}
+
+.loginLabel {
+  margin: 15px 15px 15px 10px;
+  color: gray;
+  font-size: 15px;
+}
+
+.inputText {
+  float: right;
+  text-align: right;
+  margin-right: 22px;
+  margin-top: 11px;
+  font-size: 15px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: gainsboro;
+  margin-top: 1px;
+}
+
+/*按钮*/
+.loginBtn {
+  width: 80%;
+  margin-top: 35px;
+}
+
+.goLoginBtn {
+  width: 80%;
+  margin-top: 15px;
+}
+
+.other {
+  display: flex;
+  justify-content: center;
+  color: gray;
+  font-size: 15px;
+  margin-top: 15rpx;
 }
