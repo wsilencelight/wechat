@@ -2,62 +2,8 @@
 <view>
   <!-- <canvas type="webgl" id="myCanvas"></canvas> -->
   <!-- <web-view src="https://threejs.org/examples/css3d_sprites.html" /> -->
-  <view class="body">
-      <view class="photo-wrap">  <!-- 舞台 -->
-        <view class="container">   <!-- 容器 -->
-            <view class="img text">
-              Login
-            </view>
-            <view class="img img01">
-              <image src="../../../images/register/1.jpeg"></image>
-            </view>
-            <view class="img img02">
-              <image src="../../../images/register/2.jpeg"></image>
-            </view>
-            <view class="img img03">
-              <image src="../../../images/register/3.jpeg"></image>
-            </view>
-            <view class="img img04">
-              <image src="../../../images/register/4.jpeg"></image>
-            </view>
-            <view class="img img05">
-              <image src="../../../images/register/5.jpg"></image>
-            </view>
-            <!-- <view class="img img06">6</view>
-            <view class="img img07">7</view>
-            <view class="img img08">8</view>
-            <view class="img img09">9</view> -->
-        </view>
-    </view>
-  </view>
-  <view class="login-from">
-    <form bindsubmit='doRegist'>
-      <!--账号-->
-      <view class="inputView">
-        <image class="nameImage" src="../../../images/register/用户.png"></image>
-        <label class="loginLabel">账号</label>
-        <input name="username" class="inputText" placeholder="请输入账号"/>
-      </view>
-      
-      <view class="line"></view>
-
-      <!--密码-->
-      <view class="inputView">
-        <image class="keyImage" src="../../../images/register/密码.png"></image>
-        <label class="loginLabel">密码</label>
-        <input name="password" class="inputText" password="true" placeholder="请输入密码"/>
-      </view>
-
-      <!--按钮-->
-      <view>
-        <button class="loginBtn" plain="true" type="primary" form-type='submit'>注册</button>
-      </view>
-
-      <view>
-        <button class="goLoginBtn" plain="true" type="warn" bindtap="goLoginPage">登录</button>
-      </view>
-    </form>
-  </view>
+  <w-animation></w-animation>
+  <w-register-form></w-register-form>
   <view class="other">
   ---其他登录方式---
   </view>

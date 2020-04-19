@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "w-animation": "../../../components/register/animation",
+    "w-register-form": "../../../components/register/form"
+  }
 }

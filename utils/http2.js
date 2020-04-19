@@ -4,6 +4,9 @@ import {
 class HTTP {
   request ({url, data = {}, method = 'GET'}) {
     const promise = new Promise(resolve => {
+      wx.showLoading({
+        title: 'waiting...',
+      })
       wx.request({
         url: config.api_base_url_local + url,
         method: method,
@@ -13,7 +16,9 @@ class HTTP {
           'appkey': config.appkey
         },
         success: res => {
-          // 2xx代表成功,失败就在fail
+          // 2xx代表请求成功，此时取消loading
+          wx.hideLoading()
+          console.log(res)
           let code = String(res.statusCode)
           if (code.startsWith('2')) {
             resolve(res)

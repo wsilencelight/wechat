@@ -1,8 +1,9 @@
+// pages/videos/register/register.js
 import {
   RAL
 } from "../../../models/register&login" 
 const ral = new RAL()
-// pages/videos/register/register.js
+const app = getApp()
 Page({
 
   /**
@@ -32,7 +33,25 @@ Page({
     }).then(res => {
       return ral.loginByWechat(res, userinfo.avatarUrl, userinfo.nickName)
     }).then(res => {
-      console.log(res)
+      const data = res.data
+      if (data.status === 200) {
+        wx.showToast({
+          title: '登陆成功',
+          icon: 'success',
+          duration: 3000
+        })
+        app.userInfo = data.data
+        console.log(app.userInfo)
+        wx.switchTab({
+          url: '/pages/classic/classic',
+        })
+      } else {
+        wx.showToast({
+          title: data.msg,
+          icon: 'none',
+          duration: 3000
+        })
+      }
     })
   },
   /**

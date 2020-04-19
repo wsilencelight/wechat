@@ -1,0 +1,30 @@
+<!--components/register/form/index.wxml-->
+  <view class="login-from">
+    <form bindsubmit='handleSubmitClick'>
+      <!--账号-->
+      <view class="inputView">
+        <image class="nameImage" src="../../../images/register/用户.png"></image>
+        <label class="loginLabel">账号</label>
+        <input name="username" class="inputText" value="{{value}}" placeholder="请输入账号"/>
+      </view>
+      
+      <view class="line"></view>
+
+      <!--密码-->
+      <view class="inputView">
+        <image class="keyImage" src="../../../images/register/密码.png"></image>
+        <label class="loginLabel">密码</label>
+        <input name="password" value='{{value}}' class="inputText" password="true" placeholder="请输入密码"/>
+      </view>
+
+      <!--按钮-->
+      <view>
+        <button data-submit-type="register" class="loginBtn" plain="true" type="primary" form-type='submit'>注册</button>
+      </view>
+
+      <view>
+        <button data-submit-type="login" class="goLoginBtn" plain="true" type="warn"
+        form-type="submit">登录</button>
+      </view>
+    </form>
+  </view>
