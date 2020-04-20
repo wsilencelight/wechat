@@ -18,7 +18,7 @@ class HTTP {
         success: res => {
           // 2xx代表请求成功，此时取消loading
           wx.hideLoading()
-          console.log(res)
+          // console.log(res)
           let code = String(res.statusCode)
           if (code.startsWith('2')) {
             resolve(res)
@@ -32,8 +32,11 @@ class HTTP {
           }
         },
         fail: (err) => {
+          wx.hideLoading()
           wx.showToast({
             title: '请求异常，请稍后再试',
+            icon: 'none',
+            duration: 3000
           })
         }
       })

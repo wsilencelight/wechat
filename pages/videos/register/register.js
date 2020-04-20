@@ -41,6 +41,10 @@ Page({
           duration: 3000
         })
         app.userInfo = data.data
+        wx.setStorage({
+          data: data.data.sessionToken,
+          key: 'token',
+        })
         console.log(app.userInfo)
         wx.switchTab({
           url: '/pages/classic/classic',

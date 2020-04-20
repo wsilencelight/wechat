@@ -38,7 +38,7 @@ Component({
             })
           } else {
             wx.showToast({
-              title: data.msg || '注册失败，请稍后再试',
+              title: data.msg || '请稍后再试',
               icon: 'none',
               duration: 3000
             })
@@ -61,12 +61,16 @@ Component({
               duration: 3000
             })
             app.userInfo = data.data
+            wx.setStorage({
+              data: data.data.sessionToken,
+              key: 'token',
+            })
             wx.switchTab({
               url: '/pages/classic/classic',
             })
           } else {
             wx.showToast({
-              title: data.msg || '注册失败，请稍后再试',
+              title: data.msg || '请稍后再试',
               icon: 'none',
               duration: 3000
             })
